@@ -5,6 +5,7 @@ import 'dart:io' show Platform;
 
 import './pages/home.dart';
 import './pages/pixel_detail.dart';
+import './pages/send_pixel.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     final routes = {
       '/': (BuildContext ctx) => Home(),
       '/pixel_detail': (BuildContext ctx) => PixelDetail(),
+      '/send_pixel': (BuildContext ctx) => SendPixel()
     };
 
     if (Platform.isAndroid) {
