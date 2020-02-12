@@ -3,9 +3,9 @@ import 'package:my_pixels/common/colors.dart';
 import 'package:my_pixels/models/comment.dart';
 import 'package:my_pixels/widgets/comment/comment_list.dart';
 
-import '../models/pixel.dart';
-import '../services/pixel_service.dart';
 import '../widgets/scaffold.dart';
+import '../services/pixel_service.dart';
+import '../models/pixel.dart';
 
 class PixelDetail extends StatelessWidget {
   @override
