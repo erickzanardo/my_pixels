@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
           ),
           Button (label: 'Send pixel',
               onPressed: (){
-                Navigator.of(context).pushNamed('/send_pixel');
+                Navigator.of(context).pushNamed('/select_pixel');
               }
           )
         ]),

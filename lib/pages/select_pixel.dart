@@ -1,21 +1,23 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import '../widgets/button.dart';
-import '../widgets/scaffold.dart';
+import '../widgets/scaffold.dart' as scaf;
 
-class SendPixel extends StatefulWidget {
+class SelectPixel extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return SendPixelState();
+    return SelectPixelState();
   }
 }
 
-class SendPixelState extends State<SendPixel> {
+class SelectPixelState extends State<SelectPixel> {
   File _image;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      home: scaf.Scaffold(
         body: Center(
             child: Column(children: [
       if (_image != null) Image.file(_image),
@@ -25,7 +27,7 @@ class SendPixelState extends State<SendPixel> {
           getImage();
         },
       )
-    ])));
+    ]))));
   }
 
   Future getImage() async {
