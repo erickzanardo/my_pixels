@@ -17,7 +17,10 @@ class SelectPixel extends StatelessWidget {
                   Image.file(snapshot.data),
                   Button(
                     label: 'Next',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed('/send_pixel', arguments: snapshot.data);
+                    },
                   ),
                 ]));
               } else {
