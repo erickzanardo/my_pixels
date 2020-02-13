@@ -1,39 +1,36 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import '../widgets/button.dart';
-import '../widgets/scaffold.dart' as scaf;
+import '../widgets/scaffold.dart';
 
-class SelectPixel extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return SelectPixelState();
-  }
-}
-
-class SelectPixelState extends State<SelectPixel> {
-  File _image;
+class SelectPixel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: scaf.Scaffold(
-        body: Center(
-            child: Column(children: [
-      if (_image != null) Image.file(_image),
-      Button(
-        label: 'Load Pixel',
-        onPressed: () {
-          getImage();
-        },
-      )
-    ]))));
+    return Scaffold(
+        body: FutureBuilder(
+            future: getImage(),
+            builder: (BuildContext context, AsyncSnapshot<File> snapshot) {
+              if (snapshot.hasData) {
+                return Center(
+                    child: Column(children: <Widget>[
+                  Image.file(snapshot.data),
+                  Button(
+                    label: 'Next',
+                    onPressed: () {},
+                  ),
+                ]));
+              } else {
+                return Button(
+                    onPressed: () {
+                      getImage();
+                    },
+                    label: 'Load Pixel');
+              }
+            }));
   }
 
-  Future getImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _image = image;
-    });
+  Future<File> getImage() {
+    return Future.value(ImagePicker.pickImage(source: ImageSource.gallery));
   }
 }
