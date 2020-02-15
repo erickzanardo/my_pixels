@@ -16,6 +16,7 @@ class TextField extends StatelessWidget {
   final TextInputAction textInputAction;
   final TextInputType keyboardType;
   final TextAlign textAlign;
+  final M.InputBorder androidInputBorder;
   final ValueChanged<String> onChanged;
   final ValueChanged<String> onSubmitted;
   final VoidCallback onEditingComplete;
@@ -32,6 +33,7 @@ class TextField extends StatelessWidget {
     this.textInputAction,
     this.keyboardType,
     this.textAlign,
+    this.androidInputBorder,
     this.onChanged,
     this.onSubmitted,
     this.onEditingComplete,
@@ -68,6 +70,7 @@ class TextField extends StatelessWidget {
         decoration: M.InputDecoration(
           hintText: hintText,
           hintStyle: hintStyle,
+          border: androidInputBorder,
         ),
         enabled: enabled,
         maxLines: maxLines,

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart' as M;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:my_pixels/common/colors.dart';
@@ -142,6 +143,7 @@ class _CommentListState extends State<CommentList> {
           color: Colors.commentFieldHintColor,
         ),
         maxLength: maxCommentLength,
+        androidInputBorder: M.InputBorder.none,
         textInputAction: TextInputAction.send,
         onSubmitted: _sendNewComment,
       ),
