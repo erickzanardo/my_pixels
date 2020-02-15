@@ -53,11 +53,11 @@ class PixelDetail extends StatelessWidget {
 
   Widget _comments(List<Comment> comments) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(12.0),
       child: CommentList(
         comments: comments,
-        initialVisibleComments: 1,
-        incrementVisibleCount: 1,
+        initialVisibleComments: 3,
+        incrementVisibleCount: 2,
         expandable: true,
       ),
     );

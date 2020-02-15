@@ -6,8 +6,10 @@ import 'package:my_pixels/models/comment.dart';
 class CommentItem extends StatelessWidget {
   static const avatarSize = 32.0;
   static const avatarTextSize = 16.0;
-  static const detailsPadding = 8.0;
+  static const detailsPadding = 4.0;
+  static const avatarSpacing = 8.0;
   static const contentTextSize = 14.0;
+  static const contentInfoTextSize = 12.0;
 
   final Comment comment;
   final bool showDetails;
@@ -32,7 +34,7 @@ class CommentItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         _authorAvatar(),
-        SizedBox(width: detailsPadding),
+        SizedBox(width: avatarSpacing),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,6 +81,7 @@ class CommentItem extends StatelessWidget {
         _getTimePassed(comment.posted),
         style: TextStyle(
           color: Colors.commentInfoTextColor,
+          fontSize: contentInfoTextSize,
         ),
       ),
     );

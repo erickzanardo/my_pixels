@@ -35,10 +35,9 @@ class CommentList extends StatefulWidget {
 
 class _CommentListState extends State<CommentList> {
   static const widgetSpacing = 8.0;
-  static const moreButtonTextSize = 12.0;
+  static const moreButtonTextSize = 13.0;
   static const maxCommentLength = 400;
-  static const commentItemPadding =
-      const EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 2.0);
+  static const commentItemPadding = 2.0;
 
   int _visibleComments;
   TextEditingController _controller;
@@ -89,7 +88,10 @@ class _CommentListState extends State<CommentList> {
       itemCount: _visibleComments,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding: commentItemPadding,
+          padding: EdgeInsets.only(
+            top: index == 0 ? 0.0 : commentItemPadding,
+            bottom: index == _visibleComments - 1 ? 0.0 : commentItemPadding,
+          ),
           child: CommentItem(
             widget.comments[index],
             showDetails: widget.showDetails,
