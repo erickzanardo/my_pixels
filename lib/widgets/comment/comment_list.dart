@@ -132,7 +132,7 @@ class _CommentListState extends State<CommentList> {
   Widget _newCommentField() {
     return Container(
       color: Colors.commentFieldColor,
-      padding: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(8.0),
       child: TextField(
         controller: _controller,
         hintText: "Comment",

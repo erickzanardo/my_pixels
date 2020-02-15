@@ -65,7 +65,10 @@ class TextField extends StatelessWidget {
       return M.TextField(
         controller: controller,
         style: style,
-        decoration: M.InputDecoration(hintText: hintText, hintStyle: hintStyle),
+        decoration: M.InputDecoration(
+          hintText: hintText,
+          hintStyle: hintStyle,
+        ),
         enabled: enabled,
         maxLines: maxLines,
         maxLength: maxLength,
