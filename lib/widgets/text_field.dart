@@ -45,10 +45,11 @@ class TextField extends StatelessWidget {
         controller: controller,
         style: style,
         placeholder: hintText,
-        placeholderStyle: hintStyle ?? const TextStyle(
-          fontWeight: FontWeight.w400,
-          color: C.CupertinoColors.placeholderText,
-        ),
+        placeholderStyle: hintStyle ??
+            const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: C.CupertinoColors.placeholderText,
+            ),
         enabled: enabled,
         maxLines: maxLines,
         maxLength: maxLength,
@@ -64,10 +65,7 @@ class TextField extends StatelessWidget {
       return M.TextField(
         controller: controller,
         style: style,
-        decoration: M.InputDecoration(
-          hintText: hintText,
-          hintStyle: hintStyle
-        ),
+        decoration: M.InputDecoration(hintText: hintText, hintStyle: hintStyle),
         enabled: enabled,
         maxLines: maxLines,
         maxLength: maxLength,

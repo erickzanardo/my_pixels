@@ -4,5 +4,5 @@ class PixelModel {
   final String url;
   final List<Comment> comments;
 
-  PixelModel({ this.url, this.comments });
+  PixelModel({this.url, this.comments});
 }

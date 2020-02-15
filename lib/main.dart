@@ -18,16 +18,16 @@ class MyApp extends StatelessWidget {
 
     if (Platform.isAndroid) {
       return MaterialApp(
-          title: 'My Pixels',
-          theme: ThemeData(
-              primarySwatch: Colors.blue,
-          ),
-          routes: routes,
+        title: 'My Pixels',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        routes: routes,
       );
     } else {
       return CupertinoApp(
-          title: 'My Pixels',
-          routes: routes,
+        title: 'My Pixels',
+        routes: routes,
       );
     }
   }

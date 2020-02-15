@@ -33,9 +33,9 @@ class PixelService {
               id: "erickz",
               name: "Erick",
             ),
-            text: "What an amazing landscape, never seen something like this!!!",
+            text:
+                "What an amazing landscape, never seen something like this!!!",
           ),
-
         ],
       ),
     );
