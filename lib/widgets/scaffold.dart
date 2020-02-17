@@ -8,14 +8,14 @@ import 'dart:io' show Platform;
 class Scaffold extends StatelessWidget {
   final Widget body;
 
-  Scaffold({ @required this.body });
+  Scaffold({@required this.body});
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isAndroid) {
-      return M.Scaffold(body: body);
-    } else {
+    if (Platform.isIOS) {
       return C.CupertinoPageScaffold(child: body);
+    } else {
+      return M.Scaffold(body: body);
     }
   }
 }
