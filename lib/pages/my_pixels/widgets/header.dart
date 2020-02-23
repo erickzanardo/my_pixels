@@ -6,8 +6,22 @@ import '../widgets/user_stats.dart';
 class Header extends StatelessWidget {
   final bool myself;
   final bool following;
+  final String photoURL;
+  final String name;
+  final String bio;
+  final int postsCount;
+  final int followersCount;
+  final int followingCount;
 
-  Header({@required this.myself, @required this.following});
+  Header(
+      {@required this.myself,
+      @required this.following,
+      @required this.photoURL,
+      @required this.name,
+      @required this.bio,
+      @required this.postsCount,
+      @required this.followersCount,
+      this.followingCount});
 
   String _profileButtonLabel() {
     if (myself) {
@@ -24,26 +38,20 @@ class Header extends StatelessWidget {
         Row(
           children: [
             UserPhoto(
-                size: 100,
-                margin: EdgeInsets.all(10),
-                photoURL:
-                    'https://vignette.wikia.nocookie.net/bobesponjabrasil/images/8/85/316508_orig.png/revision/latest/scale-to-width-down/340?cb=20131128193955&path-prefix=pt-br'),
+                size: 100, margin: EdgeInsets.all(10), photoURL: photoURL),
             Expanded(
               child: UserStats(
-                posts: '123',
-                followers: '123',
-                following: '123',
+                posts: '$postsCount',
+                followers: '$followersCount',
+                following: '$followingCount',
               ),
             ),
           ],
         ),
         Padding(
             padding: EdgeInsets.only(left: 15),
-            child: Text('Tyemy Kuga',
-                style: TextStyle(fontWeight: FontWeight.bold))),
-        Padding(
-            padding: EdgeInsets.only(left: 15),
-            child: Text('Biografia da Tyemy Kuga')),
+            child: Text(name, style: TextStyle(fontWeight: FontWeight.bold))),
+        Padding(padding: EdgeInsets.only(left: 15), child: Text(bio)),
         Center(
             child: Button(
           label: _profileButtonLabel(),
