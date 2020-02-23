@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:my_pixels/pages/my_pixels/widgets/pixel_thumbnail.dart';
 import '../../widgets/scaffold.dart';
 import './widgets/header.dart';
+import './widgets/pixels.dart';
 
 class MyPixels extends StatelessWidget {
   final bool myself;
@@ -41,19 +41,7 @@ class MyPixels extends StatelessWidget {
             followersCount: followersCount,
             followingCount: followingCount,
           ),
-          Expanded(
-            child: GridView.builder(
-                itemCount: postsCount,
-                primary: false,
-                padding: EdgeInsets.all(10),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3),
-                itemBuilder: (BuildContext context, int index) {
-                  return PixelThumbnail(
-                    url: pixels[index],
-                  );
-                }),
-          ),
+          Pixels(pixels: pixels, total: postsCount),
         ],
       )),
     );
