@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:my_pixels/widgets/user_photo.dart';
-import '../widgets/scaffold.dart';
+import '../../widgets/scaffold.dart';
 
 class MyPixels extends StatelessWidget {
   @override
