@@ -5,6 +5,7 @@ import 'dart:io' show Platform;
 
 import './pages/home.dart';
 import './pages/pixel_detail.dart';
+import './pages/my_pixels.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     final routes = {
       '/': (BuildContext ctx) => Home(),
       '/pixel_detail': (BuildContext ctx) => PixelDetail(),
+      '/my_pixels': (BuildContext ctx) => MyPixels(),
     };
 
     if (Platform.isAndroid) {
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
       return CupertinoApp(
         title: 'My Pixels',
         routes: routes,
+        initialRoute: '/my_pixels',
       );
     }
   }
