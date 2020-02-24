@@ -18,10 +18,14 @@ class Home extends StatelessWidget {
                   Navigator.of(context).pushNamed('/pixel_detail');
                 },
               ),
+              Button (label: 'Send pixel',
+                  onPressed: (){
+                    Navigator.of(context).pushNamed('/select_pixel');
+                  }
+              ),
             ],
           ),
         ),
-      ),
-    );
+    ));
   }
 }
