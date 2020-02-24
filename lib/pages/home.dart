@@ -22,10 +22,10 @@ class Home extends StatelessWidget {
                   onPressed: (){
                     Navigator.of(context).pushNamed('/select_pixel');
                   }
-              )
+              ),
             ],
           ),
-        ]),
+        ),
     ));
   }
 }
