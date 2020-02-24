@@ -9,14 +9,14 @@ class Button extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
 
-  Button({ @required this.label, @required this.onPressed });
+  Button({@required this.label, @required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isAndroid) {
-      return M.RaisedButton(child: Text(label), onPressed: onPressed);
-    } else {
+    if (Platform.isIOS) {
       return C.CupertinoButton(child: Text(label), onPressed: onPressed);
+    } else {
+      return M.RaisedButton(child: Text(label), onPressed: onPressed);
     }
   }
 }
