@@ -23,6 +23,11 @@ class Home extends StatelessWidget {
                     Navigator.of(context).pushNamed('/select_pixel');
                   }
               ),
+              Button (label: 'List pixels',
+                  onPressed: (){
+                    Navigator.of(context).pushNamed('/list_pixel');
+                  }
+              ),
             ],
           ),
         ),
