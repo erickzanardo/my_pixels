@@ -7,13 +7,13 @@ class AppBar {
 
   AppBar({this.title});
 
-  C.CupertinoNavigationBar toCupertino() {
+  C.CupertinoNavigationBar asCupertino() {
     return C.CupertinoNavigationBar(
       middle: title,
     );
   }
 
-  M.AppBar toMaterial() {
+  M.AppBar asMaterial() {
     return M.AppBar(
       title: title,
     );

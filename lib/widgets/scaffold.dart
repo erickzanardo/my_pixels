@@ -18,12 +18,12 @@ class Scaffold extends StatelessWidget {
     if (Platform.isIOS) {
       return C.CupertinoPageScaffold(
         child: body,
-        navigationBar: appBar?.toCupertino(),
+        navigationBar: appBar?.asCupertino(),
       );
     } else {
       return M.Scaffold(
         body: body,
-        appBar: appBar?.toMaterial(),
+        appBar: appBar?.asMaterial(),
       );
     }
   }
