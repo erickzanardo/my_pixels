@@ -5,17 +5,26 @@ import 'package:meta/meta.dart';
 
 import 'dart:io' show Platform;
 
+import 'app_bar.dart';
+
 class Scaffold extends StatelessWidget {
   final Widget body;
+  final AppBar appBar;
 
-  Scaffold({@required this.body});
+  Scaffold({@required this.body, this.appBar});
 
   @override
   Widget build(BuildContext context) {
     if (Platform.isIOS) {
-      return C.CupertinoPageScaffold(child: body);
+      return C.CupertinoPageScaffold(
+        child: body,
+        navigationBar: appBar?.asCupertino(),
+      );
     } else {
-      return M.Scaffold(body: body);
+      return M.Scaffold(
+        body: body,
+        appBar: appBar?.asMaterial(),
+      );
     }
   }
 }
