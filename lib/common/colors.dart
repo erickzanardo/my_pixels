@@ -11,6 +11,7 @@ class Colors {
   static const Color _mediumGray = Color(0xFFADADAD);
   static const Color _lightWarmGray = Color(0xFFF8F6F9);
   static const Color _pixelGreen = Color(0xFF83E0BA);
+
   /// define variables to point to custom colors for specific uses based on
   /// theme selection (Dark or Light) (TODO)
   ///

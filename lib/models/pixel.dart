@@ -7,5 +7,6 @@ class PixelModel {
   final int likes;
   final String author; // TODO: should it be other entity?
 
-  PixelModel({this.url, this.comments, this.createdAt, this.likes, this.author});
+  PixelModel(
+      {this.url, this.comments, this.createdAt, this.likes, this.author});
 }

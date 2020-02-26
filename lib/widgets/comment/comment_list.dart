@@ -74,7 +74,7 @@ class _CommentListState extends State<CommentList> {
     if (widgets.length > 0) {
       widgets.add(SizedBox(height: widgetSpacing));
     }
-    
+
     if (widget.enableComment) {
       widgets.add(_newCommentField());
     }

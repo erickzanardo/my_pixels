@@ -7,41 +7,32 @@ import '../../common/colors.dart';
 import './list_item.dart';
 
 final String assetName = 'assets/images/logo.svg';
-final Widget logo = SvgPicture.asset(
-  assetName,
-  semanticsLabel: 'My pixels logo'
-);
+final Widget logo =
+    SvgPicture.asset(assetName, semanticsLabel: 'My pixels logo');
 
 class PixelList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-            child: Center (
-                child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        height: 80,
-                        child: logo,
-                      ),
-                      Expanded(
-                          child: Container(
-                              color: Colors.pixelListBackgroung,
-                              child: ListView(
-                                  children: [
-                                    ListItem(),
-                                    ListItem(),
-                                    ListItem(),
-                                    ListItem(),
-                                  ],
-                              )
-                          )
-                      )
-                    ]
-                )
-            )
-        )
-    );
+            child: Center(
+                child: Column(children: [
+      Container(
+        padding: EdgeInsets.all(10),
+        height: 80,
+        child: logo,
+      ),
+      Expanded(
+          child: Container(
+              color: Colors.pixelListBackgroung,
+              child: ListView(
+                children: [
+                  ListItem(),
+                  ListItem(),
+                  ListItem(),
+                  ListItem(),
+                ],
+              )))
+    ]))));
   }
 }
