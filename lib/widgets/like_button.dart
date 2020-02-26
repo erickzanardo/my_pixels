@@ -20,7 +20,8 @@ class LikeButton extends StatefulWidget {
   _LikeButtonState createState() => _LikeButtonState();
 }
 
-class _LikeButtonState extends State<LikeButton> with SingleTickerProviderStateMixin {
+class _LikeButtonState extends State<LikeButton>
+    with SingleTickerProviderStateMixin {
   Animation<double> _animation;
   AnimationController controller;
   double percent = 0.0;
@@ -36,9 +37,9 @@ class _LikeButtonState extends State<LikeButton> with SingleTickerProviderStateM
       percent = 1.0;
     }
 
-    controller = AnimationController(
-        duration: Duration(milliseconds: 250), vsync: this)
-        ..value = percent;
+    controller =
+        AnimationController(duration: Duration(milliseconds: 250), vsync: this)
+          ..value = percent;
   }
 
   @override
@@ -50,18 +51,17 @@ class _LikeButtonState extends State<LikeButton> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     _animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
-        ..addListener(() {
-          setState(() {
-            percent = _animation.value;
-          });
+      ..addListener(() {
+        setState(() {
+          percent = _animation.value;
         });
+      });
 
     return Container(
         width: widget.width,
         height: widget.height,
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.likeButtonColor)
-        ),
+        decoration:
+            BoxDecoration(border: Border.all(color: Colors.likeButtonColor)),
         child: GestureDetector(
             onTap: () {
               if (!_selected) {
@@ -79,15 +79,12 @@ class _LikeButtonState extends State<LikeButton> with SingleTickerProviderStateM
               });
             },
             child: CustomPaint(
-                 painter: _LikeButtonPainter(percent),
-            )
-        )
-    );
+              painter: _LikeButtonPainter(percent),
+            )));
   }
 }
 
 class _LikeButtonPainter extends CustomPainter {
-
   final _paint = Paint()..color = Colors.likeButtonColor;
   final _paint2 = Paint()..color = Colors.likeButtonColorOpacity1;
   final _paint3 = Paint()..color = Colors.likeButtonColorOpacity2;
@@ -104,15 +101,13 @@ class _LikeButtonPainter extends CustomPainter {
     if (percent < 1) {
       final width = max(0.0, (size.width * percent));
 
-
       final columnCount = (width / 10).floor();
       for (var i = 0; i < columnCount; i++) {
         final p = columnCount - i;
 
         canvas.drawRect(
             Rect.fromLTWH(i * cellWidth, 0, cellWidth + 1, size.height),
-            p == 1 ? _paint3 : p == 2 ? _paint2 : _paint
-        );
+            p == 1 ? _paint3 : p == 2 ? _paint2 : _paint);
       }
     } else {
       canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), _paint);
