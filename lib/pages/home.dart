@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
               ),
               Button (label: 'List pixels',
                   onPressed: (){
-                    Navigator.of(context).pushNamed('/list_pixel');
+                    Navigator.of(context).pushNamed('/feed');
                   }
               ),
             ],

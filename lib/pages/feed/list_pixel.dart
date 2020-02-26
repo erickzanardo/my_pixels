@@ -37,6 +37,8 @@ class ListPixel extends StatelessWidget {
                                   children: [
                                     ItemList(),
                                     ItemList(),
+                                    ItemList(),
+                                    ItemList(),
                                   ],
                               )
                           )
