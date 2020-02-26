@@ -16,6 +16,7 @@ class CommentList extends StatefulWidget {
   final int initialVisibleComments;
   final int incrementVisibleCount;
   final void Function(String text) onNewComment;
+  final void Function() onShowAllComments;
 
   bool get hasComments => comments?.isNotEmpty == true;
 
@@ -26,6 +27,7 @@ class CommentList extends StatefulWidget {
     int initialVisibleComments = 3,
     this.incrementVisibleCount = 3,
     this.onNewComment,
+    this.onShowAllComments,
   }) : initialVisibleComments = min(initialVisibleComments, comments.length) {
     comments?.sort((a, b) => a.posted.compareTo(b.posted));
   }
@@ -105,7 +107,7 @@ class _CommentListState extends State<CommentList> {
   Widget _moreButton() {
     return GestureDetector(
       onTap: () {
-        widget.expandable ? _showMoreComments() : _openCommentScreen();
+        widget.expandable ? _showMoreComments() : _showAllComments();
       },
       child: Text(
         widget.expandable ? "Show more" : "View all comments",
@@ -127,9 +129,9 @@ class _CommentListState extends State<CommentList> {
     });
   }
 
-  void _openCommentScreen() {
-    // TODO navigate to Comment Screen
-    print("Navigate to comment screen for pixel ${widget.comments[0].pixelId}");
+  void _showAllComments() {
+    print("Show all comments for pixel ${widget.comments[0].pixelId}");
+    widget.onShowAllComments?.call();
   }
 
   Widget _newCommentField() {
