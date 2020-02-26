@@ -13,6 +13,7 @@ class CommentList extends StatefulWidget {
   final List<Comment> comments;
   final bool expandable;
   final bool showDetails;
+  final bool enableComment;
   final int initialVisibleComments;
   final int incrementVisibleCount;
   final void Function(String text) onNewComment;
@@ -23,6 +24,7 @@ class CommentList extends StatefulWidget {
     @required this.comments,
     this.expandable = false,
     this.showDetails = false,
+    this.enableComment = true,
     int initialVisibleComments = 3,
     this.incrementVisibleCount = 3,
     this.onNewComment,
@@ -72,8 +74,10 @@ class _CommentListState extends State<CommentList> {
     if (widgets.length > 0) {
       widgets.add(SizedBox(height: widgetSpacing));
     }
-
-    widgets.add(_newCommentField());
+    
+    if (widget.enableComment) {
+      widgets.add(_newCommentField());
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

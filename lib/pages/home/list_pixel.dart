@@ -2,8 +2,14 @@ import 'package:flutter/widgets.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../widgets/scaffold.dart';
-import '../common/colors.dart';
+import '../../widgets/scaffold.dart';
+import '../../common/colors.dart';
+import './item_list.dart';
+
+final content = [
+  ItemList(),
+  ItemList(),
+];
 
 final String assetName = 'assets/images/logo.svg';
 final Widget logo = SvgPicture.asset(
@@ -27,9 +33,11 @@ class ListPixel extends StatelessWidget {
                       Expanded(
                           child: Container(
                               color: Colors.listPixelBackGround,
-                              child: ListView (
+                              child: ListView(
                                   children: [
-                                  ]
+                                    ItemList(),
+                                    ItemList(),
+                                  ],
                               )
                           )
                       )

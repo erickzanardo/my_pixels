@@ -7,7 +7,7 @@ import './pages/home.dart';
 import './pages/pixel_detail.dart';
 import './pages/select_pixel.dart';
 import './pages/send_pixel.dart';
-import './pages/list_pixel.dart';
+import './pages/home/list_pixel.dart';
 
 void main() => runApp(MyApp());
 
