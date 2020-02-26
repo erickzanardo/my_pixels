@@ -4,12 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../widgets/scaffold.dart';
 import '../../common/colors.dart';
-import './item_list.dart';
-
-final content = [
-  ItemList(),
-  ItemList(),
-];
+import './list_item.dart';
 
 final String assetName = 'assets/images/logo.svg';
 final Widget logo = SvgPicture.asset(
@@ -17,7 +12,7 @@ final Widget logo = SvgPicture.asset(
   semanticsLabel: 'My pixels logo'
 );
 
-class ListPixel extends StatelessWidget {
+class PixelList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,13 +27,13 @@ class ListPixel extends StatelessWidget {
                       ),
                       Expanded(
                           child: Container(
-                              color: Colors.listPixelBackGround,
+                              color: Colors.pixelListBackgroung,
                               child: ListView(
                                   children: [
-                                    ItemList(),
-                                    ItemList(),
-                                    ItemList(),
-                                    ItemList(),
+                                    ListItem(),
+                                    ListItem(),
+                                    ListItem(),
+                                    ListItem(),
                                   ],
                               )
                           )

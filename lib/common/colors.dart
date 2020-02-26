@@ -11,8 +11,6 @@ class Colors {
   static const Color _mediumGray = Color(0xFFADADAD);
   static const Color _lightWarmGray = Color(0xFFF8F6F9);
   static const Color _pixelGreen = Color(0xFF83E0BA);
-  static const Color _listPixel = Color(0xFFF8F6F9);
-
   /// define variables to point to custom colors for specific uses based on
   /// theme selection (Dark or Light) (TODO)
   ///
@@ -28,6 +26,7 @@ class Colors {
   static Color get commentFieldColor => _lightWarmGray;
   static Color get commentFieldHintColor => _mediumGray;
 
+  static Color get pixelListBackgroung => _lightWarmGray;
+
   // list pixel
-  static Color get listPixelBackGround => _listPixel;
 }

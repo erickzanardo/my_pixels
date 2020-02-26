@@ -7,7 +7,7 @@ import './pages/home.dart';
 import './pages/pixel_detail.dart';
 import './pages/select_pixel.dart';
 import './pages/send_pixel.dart';
-import './pages/feed/list_pixel.dart';
+import './pages/feed/pixel_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       '/pixel_detail': (BuildContext ctx) => PixelDetail(),
       '/select_pixel': (BuildContext ctx) => SelectPixel(),
       '/send_pixel': (BuildContext ctx) => SendPixel(),
-      '/feed': (BuildContext ctx) => ListPixel()
+      '/feed': (BuildContext ctx) => PixelList()
     };
 
     if (Platform.isAndroid) {
