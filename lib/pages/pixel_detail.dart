@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:my_pixels/common/colors.dart';
 import 'package:my_pixels/models/comment.dart';
+import 'package:my_pixels/pages/comment_page.dart';
 import 'package:my_pixels/widgets/comment/comment_list.dart';
 
 import '../models/pixel.dart';
@@ -23,7 +24,7 @@ class PixelDetail extends StatelessWidget {
                   return Column(
                     children: <Widget>[
                       _picture(snapshot.data.url),
-                      _comments(snapshot.data.comments)
+                      _comments(context, snapshot.data)
                     ],
                   );
                 } else if (snapshot.hasError) {
@@ -51,14 +52,15 @@ class PixelDetail extends StatelessWidget {
     );
   }
 
-  Widget _comments(List<Comment> comments) {
+  Widget _comments(BuildContext context, PixelModel pixel) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: CommentList(
-        comments: comments,
+        comments: pixel.comments,
         initialVisibleComments: 3,
-        incrementVisibleCount: 2,
-        expandable: true,
+        onShowAllComments: () {
+          Navigator.of(context).pushNamed(CommentPage.routeName, arguments: CommentPageArgs(pixel));
+        },
       ),
     );
   }
