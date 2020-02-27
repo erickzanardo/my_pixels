@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:my_pixels/pages/comment_page.dart';
 
 import 'dart:io' show Platform;
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       '/pixel_detail': (BuildContext ctx) => PixelDetail(),
       '/select_pixel': (BuildContext ctx) => SelectPixel(),
       '/send_pixel': (BuildContext ctx) => SendPixel(),
-      '/feed': (BuildContext ctx) => PixelList()
+      '/feed': (BuildContext ctx) => PixelList(),
+      CommentPage.routeName: (BuildContext ctx) => CommentPage(),
     };
 
     if (Platform.isAndroid) {
