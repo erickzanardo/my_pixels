@@ -6,6 +6,9 @@ class PixelService {
   static Future<PixelModel> fetchPixel() {
     return Future.value(
       PixelModel(
+        likes: 55,
+        author: "Toyotomi Hideyoshi",
+        createdAt: DateTime.parse("2020-02-01 09:00:00"),
         url: 'https://cptblackpixel.dev/assets/projects/relic_raider.png',
         comments: [
           Comment(
@@ -15,7 +18,8 @@ class PixelService {
               id: "thomashorta",
               name: "Thomas",
             ),
-            text: "This pixel is awesome! And I would like to post a very long comment just to test this comment list system.",
+            text:
+                "This pixel is awesome! And I would like to post a very long comment just to test this comment list system.",
           ),
           Comment(
             pixelId: "ab42cd",
@@ -61,8 +65,7 @@ class PixelService {
               id: "erickz",
               name: "Erick",
             ),
-            text:
-                "Not bad!",
+            text: "Not bad!",
           ),
           Comment(
             pixelId: "ab42cd",
@@ -89,8 +92,7 @@ class PixelService {
               id: "danilo",
               name: "Danilo",
             ),
-            text:
-                "Very cool, with the moon and all!",
+            text: "Very cool, with the moon and all!",
           ),
         ],
       ),

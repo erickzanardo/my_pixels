@@ -26,4 +26,8 @@ class Colors {
   static Color get commentInfoTextColor => _mediumGray;
   static Color get commentFieldColor => _lightWarmGray;
   static Color get commentFieldHintColor => _mediumGray;
+
+  static Color get pixelListBackgroung => _lightWarmGray;
+
+  // list pixel
 }

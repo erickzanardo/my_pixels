@@ -7,25 +7,30 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Text('My Pixels'),
-              Button(
-                label: 'See pixel',
+        body: SafeArea(
+      child: Center(
+        child: Column(
+          children: [
+            Text('My Pixels'),
+            Button(
+              label: 'See pixel',
+              onPressed: () {
+                Navigator.of(context).pushNamed('/pixel_detail');
+              },
+            ),
+            Button(
+                label: 'Send pixel',
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/pixel_detail');
-                },
-              ),
-              Button (label: 'Send pixel',
-                  onPressed: (){
-                    Navigator.of(context).pushNamed('/select_pixel');
-                  }
-              ),
-            ],
-          ),
+                  Navigator.of(context).pushNamed('/select_pixel');
+                }),
+            Button(
+                label: 'List pixels',
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/feed');
+                }),
+          ],
         ),
+      ),
     ));
   }
 }
