@@ -1,12 +1,19 @@
 import 'package:my_pixels/models/comment.dart';
+import './user.dart';
 
 class PixelModel {
   final String url;
   final List<Comment> comments;
   final DateTime createdAt;
   final int likes;
-  final String author; // TODO: should it be other entity?
+  final UserModel author;
+  final List<UserModel> userLiked;
 
   PixelModel(
-      {this.url, this.comments, this.createdAt, this.likes, this.author});
+      {this.url,
+      this.comments,
+      this.createdAt,
+      this.likes,
+      this.author,
+      this.userLiked});
 }
