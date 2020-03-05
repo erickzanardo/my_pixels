@@ -11,6 +11,7 @@ class Colors {
   static const Color _mediumGray = Color(0xFFADADAD);
   static const Color _lightWarmGray = Color(0xFFF8F6F9);
   static const Color _pixelGreen = Color(0xFF83E0BA);
+  static const Color _lightRed = Color(0xFFF45A5D);
 
   /// define variables to point to custom colors for specific uses based on
   /// theme selection (Dark or Light) (TODO)
@@ -30,4 +31,7 @@ class Colors {
   static Color get pixelListBackgroung => _lightWarmGray;
 
   // list pixel
+  static Color get likeButtonColor => _lightRed;
+  static Color get likeButtonColorOpacity1 => _lightRed.withOpacity(0.7);
+  static Color get likeButtonColorOpacity2 => _lightRed.withOpacity(0.3);
 }

@@ -19,6 +19,7 @@ dependencies:
 
 dev_dependencies:
   meta: ^1.1.8
+  dashbook: 0.0.4
   flutter_test:
     sdk: flutter
 
