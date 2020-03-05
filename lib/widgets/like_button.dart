@@ -48,6 +48,22 @@ class _LikeButtonState extends State<LikeButton>
     super.dispose();
   }
 
+  void _handleTap() {
+    if (!_selected) {
+      controller.forward();
+    } else {
+      controller.reverse();
+    }
+
+    if (widget.onChange != null) {
+      widget.onChange(!_selected);
+    }
+
+    setState(() {
+      _selected = !_selected;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     _animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
@@ -64,19 +80,7 @@ class _LikeButtonState extends State<LikeButton>
             BoxDecoration(border: Border.all(color: Colors.likeButtonColor)),
         child: GestureDetector(
             onTap: () {
-              if (!_selected) {
-                controller.forward();
-              } else {
-                controller.reverse();
-              }
-
-              if (widget.onChange != null) {
-                widget.onChange(!_selected);
-              }
-
-              setState(() {
-                _selected = !_selected;
-              });
+              _handleTap();
             },
             child: CustomPaint(
               painter: _LikeButtonPainter(percent),
