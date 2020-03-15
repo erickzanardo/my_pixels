@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 import '../widgets/button.dart';
 import '../widgets/scaffold.dart';
-import '../widgets/bottom_navigation.dart';
+import '../widgets/bottom_navigate.dart';
 
 import './select_pixel.dart';
 import './feed/pixel_list.dart';

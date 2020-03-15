@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 import 'dart:io' show Platform;
 
 import 'app_bar.dart';
-import 'bottom_navigation.dart';
+import 'bottom_navigate.dart';
 
 class Scaffold extends StatelessWidget {
   final Widget body;
