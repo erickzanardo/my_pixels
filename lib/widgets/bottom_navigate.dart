@@ -27,6 +27,7 @@ class BottomNavigate {
 
   M.BottomNavigationBar asMaterial() {
     return M.BottomNavigationBar(
+        type: M.BottomNavigationBarType.fixed,
         onTap: onTap,
         currentIndex: currentIndex,
         items: [

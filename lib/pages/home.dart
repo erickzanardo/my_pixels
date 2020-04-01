@@ -6,6 +6,7 @@ import '../widgets/bottom_navigate.dart';
 
 import './select_pixel.dart';
 import './feed/pixel_list.dart';
+import './home_helper.dart';
 
 class Home extends StatefulWidget {
   Home();
@@ -14,39 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  static BuildContext _context;
   static int _currentIndex;
-
-  final List<Widget> _pages = [
-    PixelList(),
-    Text('search'),
-    SelectPixel(),
-    Center(
-      child: Column(
-        children: [
-          Text('My Pixels'),
-          Button(
-            label: 'See pixel',
-            onPressed: () {
-              print('elias');
-              Navigator.of(_context).pushNamed('/pixel_detail');
-            },
-          ),
-          Button(
-              label: 'Send pixel',
-              onPressed: () {
-                Navigator.of(_context).pushNamed('/select_pixel');
-              }),
-          Button(
-              label: 'List pixels',
-              onPressed: () {
-                Navigator.of(_context).pushNamed('/feed');
-              }),
-        ],
-      ),
-    ),
-    Text('Profile')
-  ];
 
   @override
   void initState() {
@@ -54,9 +23,16 @@ class _HomeState extends State<Home> {
     _currentIndex = 0;
   }
 
+  final List<Widget> _pages = [
+    PixelList(),
+    Text('search'),
+    SelectPixel(),
+    HomeHelper(),
+    Text('Profile')
+  ];
+
   @override
   Widget build(BuildContext context) {
-    setState(() => {_context = context});
     return Scaffold(
       bottomNavigate:
           BottomNavigate(currentIndex: _currentIndex, onTap: _onTap),
