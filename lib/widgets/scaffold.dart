@@ -26,7 +26,7 @@ class Scaffold extends StatelessWidget {
       return M.Scaffold(
         body: body,
         appBar: appBar?.asMaterial(),
-        bottomNavigationBar: bottomNavigate?.asMaterial(),
+        bottomNavigationBar: bottomNavigate,
       );
     }
   }

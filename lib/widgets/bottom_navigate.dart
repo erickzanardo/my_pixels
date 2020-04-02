@@ -19,23 +19,25 @@ final Widget gridAssetWidget =
 final Widget profileAssetWidget =
     SvgPicture.asset(profileAsset, semanticsLabel: 'Profile');
 
-class BottomNavigate {
+class BottomNavigate extends StatelessWidget {
   final int currentIndex;
-  Function onTap;
+  final Function onTap;
 
   BottomNavigate({@required this.currentIndex, @required this.onTap});
 
-  M.BottomNavigationBar asMaterial() {
+  @override
+  Widget build(BuildContext context) {
     return M.BottomNavigationBar(
-        type: M.BottomNavigationBarType.fixed,
-        onTap: onTap,
-        currentIndex: currentIndex,
-        items: [
-          BottomNavigationBarItem(icon: homeAssetWidget, title: Text('')),
-          BottomNavigationBarItem(icon: searchAssetWidget, title: Text('')),
-          BottomNavigationBarItem(icon: addAssetWidget, title: Text('')),
-          BottomNavigationBarItem(icon: gridAssetWidget, title: Text('')),
-          BottomNavigationBarItem(icon: profileAssetWidget, title: Text('')),
-        ]);
+      type: M.BottomNavigationBarType.fixed,
+      onTap: onTap,
+      currentIndex: currentIndex,
+      items: [
+        BottomNavigationBarItem(icon: homeAssetWidget, title: Text('')),
+        BottomNavigationBarItem(icon: searchAssetWidget, title: Text('')),
+        BottomNavigationBarItem(icon: addAssetWidget, title: Text('')),
+        BottomNavigationBarItem(icon: gridAssetWidget, title: Text('')),
+        BottomNavigationBarItem(icon: profileAssetWidget, title: Text('')),
+      ],
+    );
   }
 }
