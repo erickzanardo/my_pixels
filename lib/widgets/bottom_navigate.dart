@@ -3,15 +3,20 @@ import 'package:flutter/material.dart' as M;
 import 'package:flutter_svg/flutter_svg.dart';
 
 final String homeAsset = 'assets/images/bottom_navigate/home.svg';
-final String homeSelectedAsset = 'assets/images/bottom_navigate/home.svg';
+final String homeSelectedAsset =
+    'assets/images/bottom_navigate/home_selected.svg';
 final String searchAsset = 'assets/images/bottom_navigate/search.svg';
-final String searchSelectedAsset = 'assets/images/bottom_navigate/search.svg';
+final String searchSelectedAsset =
+    'assets/images/bottom_navigate/search_selected.svg';
 final String addAsset = 'assets/images/bottom_navigate/add_pixel.svg';
-final String addSelectedAsset = 'assets/images/bottom_navigate/add_pixel.svg';
+final String addSelectedAsset =
+    'assets/images/bottom_navigate/add_pixel_seleted.svg';
 final String gridAsset = 'assets/images/bottom_navigate/grid.svg';
-final String gridSelectedAsset = 'assets/images/bottom_navigate/grid.svg';
+final String gridSelectedAsset =
+    'assets/images/bottom_navigate/grid_selected.svg';
 final String profileAsset = 'assets/images/bottom_navigate/profile.svg';
-final String profileSelectedAsset = 'assets/images/bottom_navigate/profile.svg';
+final String profileSelectedAsset =
+    'assets/images/bottom_navigate/profile_selected.svg';
 
 final Widget homeAssetWidget =
     SvgPicture.asset(homeAsset, semanticsLabel: 'Home');
