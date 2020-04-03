@@ -7,7 +7,7 @@ class PixelService {
     return Future.value(
       PixelModel(
         likes: 55,
-        author: "Toyotomi Hideyoshi",
+        authorId: "firebase_id",
         createdAt: DateTime.parse("2020-02-01 09:00:00"),
         url: 'https://cptblackpixel.dev/assets/projects/relic_raider.png',
         comments: [

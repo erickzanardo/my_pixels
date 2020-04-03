@@ -51,12 +51,6 @@ class AuthorInsights extends StatelessWidget {
                 Text(commentsCount.toString()),
               ]),
             ),
-            Container(
-                margin: EdgeInsets.all(5),
-                child: Column(children: [
-                  likeAsset,
-                  Text(likesCount.toString()),
-                ]))
           ]),
         ]));
   }
