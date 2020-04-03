@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:my_pixels/common/colors.dart';
-import 'package:my_pixels/models/comment.dart';
 import 'package:my_pixels/pages/comment_page.dart';
 import 'package:my_pixels/widgets/comment/comment_list.dart';
 

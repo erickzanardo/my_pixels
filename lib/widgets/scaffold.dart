@@ -6,12 +6,14 @@ import 'package:meta/meta.dart';
 import 'dart:io' show Platform;
 
 import 'app_bar.dart';
+import 'bottom_navigate.dart';
 
 class Scaffold extends StatelessWidget {
   final Widget body;
   final AppBar appBar;
+  final BottomNavigate bottomNavigate;
 
-  Scaffold({@required this.body, this.appBar});
+  Scaffold({@required this.body, this.appBar, this.bottomNavigate});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class Scaffold extends StatelessWidget {
       return M.Scaffold(
         body: body,
         appBar: appBar?.asMaterial(),
+        bottomNavigationBar: bottomNavigate,
       );
     }
   }

@@ -32,7 +32,7 @@ class ListItem extends StatelessWidget {
                       child: Text(dateFormat, textAlign: TextAlign.left)),
                   Picture(url: snapshot.data.url),
                   AuthorInsights(
-                      authorName: snapshot.data.author,
+                      authorName: snapshot.data.authorId,
                       likesCount: snapshot.data.likes,
                       commentsCount: snapshot.data.comments.length),
                   Padding(
