@@ -5,8 +5,14 @@ class PixelModel {
   final List<Comment> comments;
   final DateTime createdAt;
   final int likes;
-  final String author; // TODO: should it be other entity?
+  final String authorId;
+  final List<String> userLiked;
 
   PixelModel(
-      {this.url, this.comments, this.createdAt, this.likes, this.author});
+      {this.url,
+      this.comments,
+      this.createdAt,
+      this.likes,
+      this.authorId,
+      this.userLiked});
 }

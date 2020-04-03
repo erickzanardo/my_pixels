@@ -59,7 +59,8 @@ class PixelDetail extends StatelessWidget {
         comments: pixel.comments,
         initialVisibleComments: 3,
         onShowAllComments: () {
-          Navigator.of(context).pushNamed(CommentPage.routeName, arguments: CommentPageArgs(pixel));
+          Navigator.of(context).pushNamed(CommentPage.routeName,
+              arguments: CommentPageArgs(pixel));
         },
       ),
     );
