@@ -1,15 +1,13 @@
 import 'package:flutter/widgets.dart';
-import '../../widgets/scaffold.dart';
-import './widgets/header.dart';
-import './widgets/pixels.dart';
+import 'package:my_pixels/models/user.dart';
+import '../../../widgets/scaffold.dart';
+import './header.dart';
+import './pixels.dart';
 
 class MyPixels extends StatelessWidget {
   final bool myself;
   final bool following;
-  final String photoURL;
-  final String name;
-  final String bio;
-  final int postsCount;
+  final UserModel userModel;
   final int followersCount;
   final int followingCount;
   final List<String> pixels;
@@ -17,10 +15,7 @@ class MyPixels extends StatelessWidget {
   MyPixels(
       {this.myself = true,
       this.following = false,
-      @required this.photoURL,
-      @required this.name,
-      @required this.bio,
-      @required this.postsCount,
+      @required this.userModel,
       @required this.followingCount,
       @required this.followersCount,
       @required this.pixels});
@@ -34,14 +29,14 @@ class MyPixels extends StatelessWidget {
           Header(
             following: following,
             myself: myself,
-            photoURL: photoURL,
-            name: name,
-            bio: bio,
-            postsCount: postsCount,
+            photoURL: userModel.photoURL,
+            name: userModel.name,
+            bio: userModel.bio,
+            postsCount: pixels.length,
             followersCount: followersCount,
             followingCount: followingCount,
           ),
-          Pixels(pixels: pixels, total: postsCount),
+          Pixels(pixels: pixels),
         ],
       )),
     );

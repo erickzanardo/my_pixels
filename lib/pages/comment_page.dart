@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:my_pixels/models/pixel.dart';
+import 'package:my_pixels/models/comment.dart';
 import 'package:my_pixels/widgets/comment/comment_list.dart';
 import 'package:my_pixels/widgets/scaffold.dart';
 
@@ -8,8 +8,7 @@ class CommentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CommentPageArgs args = ModalRoute.of(context).settings.arguments;
-    final comments = args?.pixel?.comments;
+    final List<Comment> comments = ModalRoute.of(context).settings.arguments;
 
     // TODO show pixel details (user, title, etc) when we have that structure
     // in Instagram the post details show up exactly like a comment, but with
@@ -30,10 +29,4 @@ class CommentPage extends StatelessWidget {
       ),
     );
   }
-}
-
-class CommentPageArgs {
-  final PixelModel pixel;
-
-  CommentPageArgs(this.pixel);
 }

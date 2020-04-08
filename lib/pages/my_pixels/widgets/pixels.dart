@@ -3,15 +3,14 @@ import './pixel_thumbnail.dart';
 
 class Pixels extends StatelessWidget {
   final List<String> pixels;
-  final int total;
 
-  Pixels({@required this.pixels, @required this.total});
+  Pixels({@required this.pixels});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.builder(
-          itemCount: total,
+          itemCount: pixels.length,
           primary: false,
           padding: EdgeInsets.all(10),
           gridDelegate:

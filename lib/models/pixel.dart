@@ -1,18 +1,28 @@
-import 'package:my_pixels/models/comment.dart';
-
 class PixelModel {
+  final String id;
   final String url;
-  final List<Comment> comments;
   final DateTime createdAt;
-  final int likes;
-  final String authorId;
-  final List<String> userLiked;
+  final String userId;
 
-  PixelModel(
-      {this.url,
-      this.comments,
-      this.createdAt,
-      this.likes,
-      this.authorId,
-      this.userLiked});
+  PixelModel({
+    this.id,
+    this.url,
+    this.createdAt,
+    this.userId,
+  });
+
+  PixelModel.fromMap(Map snapshot, String id)
+      : id = id,
+        url = snapshot['url'] ?? '',
+        createdAt = snapshot['createdAt'].toDate() ?? '',
+        userId = snapshot['userId'] ?? '';
+
+  toJson() {
+    return {
+      "id": id,
+      "url": url,
+      "createdAt": createdAt,
+      "userId": userId,
+    };
+  }
 }

@@ -1,11 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-import '../widgets/button.dart';
 import '../widgets/scaffold.dart';
 import '../widgets/bottom_navigate.dart';
 
 import './select_pixel.dart';
-import './feed/pixel_list.dart';
+import './feed/feed_page.dart';
 import './home_helper.dart';
 
 class Home extends StatefulWidget {
@@ -24,7 +23,7 @@ class _HomeState extends State<Home> {
   }
 
   final List<Widget> _pages = [
-    PixelList(),
+    FeedPage(),
     Text('search'),
     SelectPixel(),
     HomeHelper(),

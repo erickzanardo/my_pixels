@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_pixels/pages/comment_page.dart';
+import 'package:my_pixels/pages/my_pixels/my_pixels_page.dart';
 
 import 'dart:io' show Platform;
 
 import './pages/home.dart';
-import './pages/pixel_detail.dart';
+import './pages/pixel_detail/pixel_detail_page.dart';
 import './pages/select_pixel.dart';
 import './pages/send_pixel.dart';
-import './pages/feed/pixel_list.dart';
+import './pages/feed/feed_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final routes = {
       '/': (BuildContext ctx) => Home(),
-      '/pixel_detail': (BuildContext ctx) => PixelDetail(),
+      '/my_pixels': (BuildContext ctx) => MyPixelsPage(),
+      '/pixel_detail': (BuildContext ctx) => PixelDetailPage(),
       '/select_pixel': (BuildContext ctx) => SelectPixel(),
       '/send_pixel': (BuildContext ctx) => SendPixel(),
-      '/feed': (BuildContext ctx) => PixelList(),
+      '/feed': (BuildContext ctx) => FeedPage(),
       CommentPage.routeName: (BuildContext ctx) => CommentPage(),
     };
 
@@ -36,6 +38,7 @@ class MyApp extends StatelessWidget {
       return CupertinoApp(
         title: 'My Pixels',
         routes: routes,
+        initialRoute: '/',
       );
     }
   }
